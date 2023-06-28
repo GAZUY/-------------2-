@@ -217,46 +217,31 @@ function lookingForASymbol (my_line,q) {
 console.log(lookingForASymbol (the_string_compared_1,'o'))
 document.write (`<hr>`)
 
-// Задание 1
-// Создать массив из 10 случайных чисел и написать несколько
-// функций для работы с ним.
-// 1
-// Функция принимает массив и выводит его на экран.
-// 2
-// Функция принимает массив и выводит только четные
-// элементы.
-// 3
-// Функция принимает массив и возвращает сумму всех
-// элементов массива.
-// 4
-// Функция принимает массив и возвращает его максималь-
-// ный элемент.
-// 5
-// Функция добавления нового элемента в массив по ука-
-// занному индексу.
-// 6
-// Функция удаления элемента из массива по указанному
-// индексу.
-// Задание 2
-// Создать еще один массив из 5 случайных чисел и написать
-// следующие функции.
-// 1
-// Функция принимает 2 массива и возвращает новый мас-
-// сив, в котором собраны все элементы из двух массивов
-// без повторений.
-/*
+document.write (`<p>=====================================================================================================</p>`)
+document.write (`<p>Задание 1</p>`)
+document.write (`<p>Создать массив из 10 случайных чисел и написать несколько
+функций для работы с ним.</p>`)
 let tenNumbers: any = []
 let min = 3
 let max = 50
 for (let i = 0; i < 10; i ++) {
  tenNumbers [i] = Math.floor(Math.random() * (max - min + 1) + min - 0.5)   
 }
+document.write (`<p>Создаем массив из случайных чисел в диапазоне от ${min} до ${max}</p>`)
 
+document.write (`<hr>`)
+
+document.write (`<p>1 Функция принимает массив и выводит его на экран.</p>`)
 
 function outputToTheScreen (arr: any []) {
-    document.write (`<p>${arr}</p>`)
+    document.write (`<p>Массив из 10 случайных чисел: ${arr}</p>`)
 }
 outputToTheScreen(tenNumbers)
+
+document.write (`<hr>`)
+
+document.write (`<p>2 Функция принимает массив и выводит только четные элементы.</p>`)
+
 
 function weOutputEvenElements (arr: any []) {
     let arr1 = []
@@ -269,18 +254,64 @@ function weOutputEvenElements (arr: any []) {
     return arr1
 }
 
-document.write (`<p> ${weOutputEvenElements (tenNumbers)}</p> `)
+document.write (`<p>Четные числа из этого массива : ${weOutputEvenElements (tenNumbers)}</p> `)
+
+document.write (`<hr>`)
+
+document.write (`<p>3 Функция принимает массив и возвращает сумму всех элементов массива.</p>`)
 
 function sumOfValues (arr: any []) {
     let s = 0
     for (let i = 0; i < 10; i ++){
         s += arr [i]
     }
-    document.write (`<p>Сумма элементов равна:${s}</p>`)
+    document.write (`<p>Сумма элементов массива равна:${s}</p>`)
 }
 sumOfValues (tenNumbers)
 
-*/
+document.write (`<hr>`)
+
+document.write (`<p>4 Функция принимает массив и возвращает его максимальный элемент.</p>`)
+
+function lookingForTheMaximumElement (arr: any []) {
+    let max = arr[0]
+    for (let i = 1; i < arr.length; i ++){
+        if (max < arr[i]){
+            max = arr[i]
+        }
+    }
+    document.write (`<p>Максимальный элемент в массиве : ${max}</p>`)
+}
+lookingForTheMaximumElement (tenNumbers)
+
+document.write (`<hr>`)
+
+document.write (`<p>5 Функция добавления нового элемента в массив по указанному индексу.</p>`)
+
+
+
+
+
+
+
+// 6
+// Функция удаления элемента из массива по указанному
+// индексу.
+// Задание 2
+// Создать еще один массив из 5 случайных чисел и написать
+// следующие функции.
+// 1
+// Функция принимает 2 массива и возвращает новый мас-
+// сив, в котором собраны все элементы из двух массивов
+// без повторений.
+
+
+
+
+
+
+
+
 
 
 // Задание 2

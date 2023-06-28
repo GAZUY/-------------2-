@@ -157,23 +157,59 @@ function lookingForASymbol(my_line, q) {
 }
 console.log(lookingForASymbol(the_string_compared_1, 'o'));
 document.write("<hr>");
-// Задание 1
-// Создать массив из 10 случайных чисел и написать несколько
-// функций для работы с ним.
-// 1
-// Функция принимает массив и выводит его на экран.
-// 2
-// Функция принимает массив и выводит только четные
-// элементы.
-// 3
-// Функция принимает массив и возвращает сумму всех
-// элементов массива.
-// 4
-// Функция принимает массив и возвращает его максималь-
-// ный элемент.
-// 5
-// Функция добавления нового элемента в массив по ука-
-// занному индексу.
+document.write("<p>=====================================================================================================</p>");
+document.write("<p>\u0417\u0430\u0434\u0430\u043D\u0438\u0435 1</p>");
+document.write("<p>\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 10 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0438 \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E\n\u0444\u0443\u043D\u043A\u0446\u0438\u0439 \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0441 \u043D\u0438\u043C.</p>");
+var tenNumbers = [];
+var min = 3;
+var max = 50;
+for (var i = 0; i < 10; i++) {
+    tenNumbers[i] = Math.floor(Math.random() * (max - min + 1) + min - 0.5);
+}
+document.write("<p>\u0421\u043E\u0437\u0434\u0430\u0435\u043C \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0432 \u0434\u0438\u0430\u043F\u0430\u0437\u043E\u043D\u0435 \u043E\u0442 " + min + " \u0434\u043E " + max + "</p>");
+document.write("<hr>");
+document.write("<p>1 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438 \u0432\u044B\u0432\u043E\u0434\u0438\u0442 \u0435\u0433\u043E \u043D\u0430 \u044D\u043A\u0440\u0430\u043D.</p>");
+function outputToTheScreen(arr) {
+    document.write("<p>\u041C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 10 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B: " + arr + "</p>");
+}
+outputToTheScreen(tenNumbers);
+document.write("<hr>");
+document.write("<p>2 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438 \u0432\u044B\u0432\u043E\u0434\u0438\u0442 \u0442\u043E\u043B\u044C\u043A\u043E \u0447\u0435\u0442\u043D\u044B\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B.</p>");
+function weOutputEvenElements(arr) {
+    var arr1 = [];
+    for (var i = 0; i < 10; i++) {
+        if (arr[i] % 2 == 0) {
+            //@ts-ignore 
+            arr1.push(arr[i]);
+        }
+    }
+    return arr1;
+}
+document.write("<p>\u0427\u0435\u0442\u043D\u044B\u0435 \u0447\u0438\u0441\u043B\u0430 \u0438\u0437 \u044D\u0442\u043E\u0433\u043E \u043C\u0430\u0441\u0441\u0438\u0432\u0430 : " + weOutputEvenElements(tenNumbers) + "</p> ");
+document.write("<hr>");
+document.write("<p>3 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0441\u0443\u043C\u043C\u0443 \u0432\u0441\u0435\u0445 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 \u043C\u0430\u0441\u0441\u0438\u0432\u0430.</p>");
+function sumOfValues(arr) {
+    var s = 0;
+    for (var i = 0; i < 10; i++) {
+        s += arr[i];
+    }
+    document.write("<p>\u0421\u0443\u043C\u043C\u0430 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432 \u043C\u0430\u0441\u0441\u0438\u0432\u0430 \u0440\u0430\u0432\u043D\u0430:" + s + "</p>");
+}
+sumOfValues(tenNumbers);
+document.write("<hr>");
+document.write("<p>4 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0435\u0433\u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439 \u044D\u043B\u0435\u043C\u0435\u043D\u0442.</p>");
+function lookingForTheMaximumElement(arr) {
+    var max = arr[0];
+    for (var i = 1; i < arr.length; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+    }
+    document.write("<p>\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439 \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \u0432 \u043C\u0430\u0441\u0441\u0438\u0432\u0435 : " + max + "</p>");
+}
+lookingForTheMaximumElement(tenNumbers);
+document.write("<hr>");
+document.write("<p>5 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u043D\u043E\u0432\u043E\u0433\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430 \u0432 \u043C\u0430\u0441\u0441\u0438\u0432 \u043F\u043E \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u043E\u043C\u0443 \u0438\u043D\u0434\u0435\u043A\u0441\u0443.</p>");
 // 6
 // Функция удаления элемента из массива по указанному
 // индексу.
@@ -184,43 +220,6 @@ document.write("<hr>");
 // Функция принимает 2 массива и возвращает новый мас-
 // сив, в котором собраны все элементы из двух массивов
 // без повторений.
-/*
-let tenNumbers: any = []
-let min = 3
-let max = 50
-for (let i = 0; i < 10; i ++) {
- tenNumbers [i] = Math.floor(Math.random() * (max - min + 1) + min - 0.5)
-}
-
-
-function outputToTheScreen (arr: any []) {
-    document.write (`<p>${arr}</p>`)
-}
-outputToTheScreen(tenNumbers)
-
-function weOutputEvenElements (arr: any []) {
-    let arr1 = []
-    for (let i = 0; i <10; i++){
-       if (arr[i] % 2 == 0) {
-        //@ts-ignore
-           arr1.push( arr[i])
-       }
-    }
-    return arr1
-}
-
-document.write (`<p> ${weOutputEvenElements (tenNumbers)}</p> `)
-
-function sumOfValues (arr: any []) {
-    let s = 0
-    for (let i = 0; i < 10; i ++){
-        s += arr [i]
-    }
-    document.write (`<p>Сумма элементов равна:${s}</p>`)
-}
-sumOfValues (tenNumbers)
-
-*/
 // Задание 2
 // Функция принимает 2 массива и возвращает новый массив,
 // в котором собраны общие элементы (то есть элементы,
