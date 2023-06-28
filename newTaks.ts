@@ -83,6 +83,16 @@ let the_string_compared_rus2 = `"У бизнесменов почти не во�
             lowerStr.includes('100% бесплатно') ||
             lowerStr.includes('не удаляйте') ||
             lowerStr.includes('xxx')) && 'спам' || 'не спам'
+    // ne srabotaet t.k. nado proverit na vhozdenie, a ne ravenstvo
+    // switch (lowerStr) {
+    //     case('увеличение продаж'):
+    //     case('только сегодня'):
+    //     case('100% бесплатно'):
+    //     case('не удаляйте'):
+    //     case('xxx'):
+    //         return 'спам'
+    //     return 'не спам'
+    // }
 }
    document.write (`<p> Строка: ${the_string_compared_rus1} - ${checkSpam(the_string_compared_rus1)}</p> `)
    document.write (`<p> Строка: ${the_string_compared_rus2} - ${checkSpam(the_string_compared_rus2)}</p> `)
@@ -150,6 +160,7 @@ document.write (`<p>8
 function lookingForALongWord (my_line){
     let my_line1
     my_line1 = my_line.replace(/[,.]/g, '')
+    my_line1 = my_line.replaceAll(',', '').replaceAll('.', '')
     let w_line = my_line1.split (' ')
     let w = w_line[0].length
     for (let i = 0; i < w_line.length; i ++){
@@ -193,29 +204,30 @@ document.write (`<p>10 Написать функцию, которая прин�
 /*
 function lookingForASymbol (my_line,q) {
     let str: any = []
-    for (let i = 0; i < my_line.length; i ++){
-        if ( my_line.indexOf(q,i-1) != my_line.indexOf(q,i) ){
-                str.push ( my_line.indexOf(q,i))
+    for (let i = 0; i < my_line.length; i++){
+        const findIndex = my_line.indexOf(q,i)
+        if ( findIndex != -1){
+            str.push (findIndex)
+            i = findIndex
         }
-        
     }
     return str
 }
 console.log(lookingForASymbol (the_string_compared_1,'o'))
 */
 
-function lookingForASymbol (my_line,q) {
-    let str: any = []
-    let i = -1
-    while ((i = my_line.indexOf(q, i + 1)) != -1) {
-        str.push ( my_line.indexOf(q,i))
-    }
-    console.log (str)
-    document.write (`<p> В строке: ${my_line}</p>`)
-    document.write (`<p> Знак: '${q}' встречается ${str.length} раз, по позициям ${str}`)
-}
-console.log(lookingForASymbol (the_string_compared_1,'o'))
-document.write (`<hr>`)
+// function lookingForASymbol (my_line,q) {
+//     let str: any = []
+//     let i = -1
+//     while ((i = my_line.indexOf(q, i + 1)) != -1) {
+//         str.push ( my_line.indexOf(q,i))
+//     }
+//     console.log (str)
+//     document.write (`<p> В строке: ${my_line}</p>`)
+//     document.write (`<p> Знак: '${q}' встречается ${str.length} раз, по позициям ${str}`)
+// }
+// console.log(lookingForASymbol (the_string_compared_1,'o'))
+// document.write (`<hr>`)
 
 document.write (`<p>=====================================================================================================</p>`)
 document.write (`<p>Задание 1</p>`)
@@ -234,7 +246,7 @@ document.write (`<hr>`)
 document.write (`<p>1 Функция принимает массив и выводит его на экран.</p>`)
 
 function outputToTheScreen (arr: any []) {
-    document.write (`<p>Массив из 10 случайных чисел: ${arr}</p>`)
+    document.write (`<p>Полученный массив случайных чисел: ${arr}</p>`)
 }
 outputToTheScreen(tenNumbers)
 
@@ -287,6 +299,47 @@ lookingForTheMaximumElement (tenNumbers)
 document.write (`<hr>`)
 
 document.write (`<p>5 Функция добавления нового элемента в массив по указанному индексу.</p>`)
+let index = 7
+let elem = 100
+document.write (`<p>Добавляем значение ${elem} на позицию ${index} </p>`)
+
+// function addingAnAlementToTheArray (arr: any [], i,e,) {
+//     arr.splice(i, 0, e, )
+//     document.write (`<p>Измененный массив ${arr} </p>`) 
+// }
+// addingAnAlementToTheArray (tenNumbers, index, elem,)
+
+const addingAnAlementToTheArray = (arr: any [], i,e,) => {
+    arr.splice(i, 0, e, )
+    document.write (`<p>Измененный массив ${arr} </p>`) 
+}
+
+addingAnAlementToTheArray (tenNumbers, index, elem,)
+
+document.write (`<hr>`)
+
+document.write (`<p>6 Функция удаления элемента из массива по указанному индексу.</p>`)
+
+document.write (`<p>Удаляем значение ${elem} на позицию ${index} </p>`)
+
+const deleteAnAlementToTheArray = (arr: any [], i,e,) => {
+    arr.splice(i, 1, )
+    document.write (`<p>Измененный массив ${arr} </p>`) 
+}
+deleteAnAlementToTheArray (tenNumbers, index, elem,)
+document.write (`<hr>`)
+
+document.write (`<p>Задание 2</p>`)
+document.write (`<p>Создать еще один массив из 5 случайных чисел и написать
+следующие функции.</p>`)
+let fiveNumbers: any = []
+for (let i = 0; i < 5; i ++) {
+    fiveNumbers [i] = Math.floor(Math.random() * (max - min + 1) + min - 0.5)   
+}
+document.write (`<p>Создаем массив из случайных чисел в диапазоне от ${min} до ${max}</p>`)
+outputToTheScreen(fiveNumbers)
+
+document.write (`<hr>`)
 
 
 
@@ -294,12 +347,9 @@ document.write (`<p>5 Функция добавления нового элем�
 
 
 
-// 6
-// Функция удаления элемента из массива по указанному
-// индексу.
-// Задание 2
-// Создать еще один массив из 5 случайных чисел и написать
-// следующие функции.
+
+
+
 // 1
 // Функция принимает 2 массива и возвращает новый мас-
 // сив, в котором собраны все элементы из двух массивов

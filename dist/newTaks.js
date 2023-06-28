@@ -55,6 +55,16 @@ function checkSpam(str) {
         lowerStr.includes('100% бесплатно') ||
         lowerStr.includes('не удаляйте') ||
         lowerStr.includes('xxx')) && 'спам' || 'не спам';
+    // ne srabotaet t.k. nado proverit na vhozdenie, a ne ravenstvo
+    // switch (lowerStr) {
+    //     case('увеличение продаж'):
+    //     case('только сегодня'):
+    //     case('100% бесплатно'):
+    //     case('не удаляйте'):
+    //     case('xxx'):
+    //         return 'спам'
+    //     return 'не спам'
+    // }
 }
 document.write("<p> \u0421\u0442\u0440\u043E\u043A\u0430: " + the_string_compared_rus1 + " - " + checkSpam(the_string_compared_rus1) + "</p> ");
 document.write("<p> \u0421\u0442\u0440\u043E\u043A\u0430: " + the_string_compared_rus2 + " - " + checkSpam(the_string_compared_rus2) + "</p> ");
@@ -103,6 +113,7 @@ document.write("<p>8\n\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0
 function lookingForALongWord(my_line) {
     var my_line1;
     my_line1 = my_line.replace(/[,.]/g, '');
+    my_line1 = my_line.replaceAll(',', '').replaceAll('.', '');
     var w_line = my_line1.split(' ');
     var w = w_line[0].length;
     for (var i = 0; i < w_line.length; i++) {
@@ -135,28 +146,29 @@ document.write("<p>10 \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0
 /*
 function lookingForASymbol (my_line,q) {
     let str: any = []
-    for (let i = 0; i < my_line.length; i ++){
-        if ( my_line.indexOf(q,i-1) != my_line.indexOf(q,i) ){
-                str.push ( my_line.indexOf(q,i))
+    for (let i = 0; i < my_line.length; i++){
+        const findIndex = my_line.indexOf(q,i)
+        if ( findIndex != -1){
+            str.push (findIndex)
+            i = findIndex
         }
-        
     }
     return str
 }
 console.log(lookingForASymbol (the_string_compared_1,'o'))
 */
-function lookingForASymbol(my_line, q) {
-    var str = [];
-    var i = -1;
-    while ((i = my_line.indexOf(q, i + 1)) != -1) {
-        str.push(my_line.indexOf(q, i));
-    }
-    console.log(str);
-    document.write("<p> \u0412 \u0441\u0442\u0440\u043E\u043A\u0435: " + my_line + "</p>");
-    document.write("<p> \u0417\u043D\u0430\u043A: '" + q + "' \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u0435\u0442\u0441\u044F " + str.length + " \u0440\u0430\u0437, \u043F\u043E \u043F\u043E\u0437\u0438\u0446\u0438\u044F\u043C " + str);
-}
-console.log(lookingForASymbol(the_string_compared_1, 'o'));
-document.write("<hr>");
+// function lookingForASymbol (my_line,q) {
+//     let str: any = []
+//     let i = -1
+//     while ((i = my_line.indexOf(q, i + 1)) != -1) {
+//         str.push ( my_line.indexOf(q,i))
+//     }
+//     console.log (str)
+//     document.write (`<p> В строке: ${my_line}</p>`)
+//     document.write (`<p> Знак: '${q}' встречается ${str.length} раз, по позициям ${str}`)
+// }
+// console.log(lookingForASymbol (the_string_compared_1,'o'))
+// document.write (`<hr>`)
 document.write("<p>=====================================================================================================</p>");
 document.write("<p>\u0417\u0430\u0434\u0430\u043D\u0438\u0435 1</p>");
 document.write("<p>\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 10 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0438 \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u043E\n\u0444\u0443\u043D\u043A\u0446\u0438\u0439 \u0434\u043B\u044F \u0440\u0430\u0431\u043E\u0442\u044B \u0441 \u043D\u0438\u043C.</p>");
@@ -170,7 +182,7 @@ document.write("<p>\u0421\u043E\u0437\u0434\u0430\u0435\u043C \u043C\u0430\u0441
 document.write("<hr>");
 document.write("<p>1 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438 \u0432\u044B\u0432\u043E\u0434\u0438\u0442 \u0435\u0433\u043E \u043D\u0430 \u044D\u043A\u0440\u0430\u043D.</p>");
 function outputToTheScreen(arr) {
-    document.write("<p>\u041C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 10 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B: " + arr + "</p>");
+    document.write("<p>\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u043D\u044B\u0439 \u043C\u0430\u0441\u0441\u0438\u0432 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B: " + arr + "</p>");
 }
 outputToTheScreen(tenNumbers);
 document.write("<hr>");
@@ -210,12 +222,37 @@ function lookingForTheMaximumElement(arr) {
 lookingForTheMaximumElement(tenNumbers);
 document.write("<hr>");
 document.write("<p>5 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u044F \u043D\u043E\u0432\u043E\u0433\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430 \u0432 \u043C\u0430\u0441\u0441\u0438\u0432 \u043F\u043E \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u043E\u043C\u0443 \u0438\u043D\u0434\u0435\u043A\u0441\u0443.</p>");
-// 6
-// Функция удаления элемента из массива по указанному
-// индексу.
-// Задание 2
-// Создать еще один массив из 5 случайных чисел и написать
-// следующие функции.
+var index = 7;
+var elem = 100;
+document.write("<p>\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u043C \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 " + elem + " \u043D\u0430 \u043F\u043E\u0437\u0438\u0446\u0438\u044E " + index + " </p>");
+// function addingAnAlementToTheArray (arr: any [], i,e,) {
+//     arr.splice(i, 0, e, )
+//     document.write (`<p>Измененный массив ${arr} </p>`) 
+// }
+// addingAnAlementToTheArray (tenNumbers, index, elem,)
+var addingAnAlementToTheArray = function (arr, i, e) {
+    arr.splice(i, 0, e);
+    document.write("<p>\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u043D\u044B\u0439 \u043C\u0430\u0441\u0441\u0438\u0432 " + arr + " </p>");
+};
+addingAnAlementToTheArray(tenNumbers, index, elem);
+document.write("<hr>");
+document.write("<p>6 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u044F \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430 \u0438\u0437 \u043C\u0430\u0441\u0441\u0438\u0432\u0430 \u043F\u043E \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u043E\u043C\u0443 \u0438\u043D\u0434\u0435\u043A\u0441\u0443.</p>");
+document.write("<p>\u0423\u0434\u0430\u043B\u044F\u0435\u043C \u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435 " + elem + " \u043D\u0430 \u043F\u043E\u0437\u0438\u0446\u0438\u044E " + index + " </p>");
+var deleteAnAlementToTheArray = function (arr, i, e) {
+    arr.splice(i, 1);
+    document.write("<p>\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u043D\u044B\u0439 \u043C\u0430\u0441\u0441\u0438\u0432 " + arr + " </p>");
+};
+deleteAnAlementToTheArray(tenNumbers, index, elem);
+document.write("<hr>");
+document.write("<p>\u0417\u0430\u0434\u0430\u043D\u0438\u0435 2</p>");
+document.write("<p>\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0435\u0449\u0435 \u043E\u0434\u0438\u043D \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 5 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0438 \u043D\u0430\u043F\u0438\u0441\u0430\u0442\u044C\n\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0435 \u0444\u0443\u043D\u043A\u0446\u0438\u0438.</p>");
+var fiveNumbers = [];
+for (var i = 0; i < 5; i++) {
+    fiveNumbers[i] = Math.floor(Math.random() * (max - min + 1) + min - 0.5);
+}
+document.write("<p>\u0421\u043E\u0437\u0434\u0430\u0435\u043C \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0432 \u0434\u0438\u0430\u043F\u0430\u0437\u043E\u043D\u0435 \u043E\u0442 " + min + " \u0434\u043E " + max + "</p>");
+outputToTheScreen(fiveNumbers);
+document.write("<hr>");
 // 1
 // Функция принимает 2 массива и возвращает новый мас-
 // сив, в котором собраны все элементы из двух массивов
