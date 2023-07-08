@@ -1,60 +1,87 @@
-document.write("<p>\u0417\u0430\u0434\u0430\u043D\u0438\u0435</p>");
-document.write("<p>1\n\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 2 \u0441\u0442\u0440\u043E\u043A\u0438 \u0438 \u0441\u0440\u0430\u0432-\n\u043D\u0438\u0432\u0430\u0435\u0442 \u0438\u0445 \u0434\u043B\u0438\u043D\u0443. \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 1, \u0435\u0441\u043B\u0438 \u0432 \u043F\u0435\u0440\u0432\u043E\u0439\n\u0441\u0442\u0440\u043E\u043A\u0435 \u0431\u043E\u043B\u044C\u0448\u0435 \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432, \u0447\u0435\u043C \u0432\u043E \u0432\u0442\u043E\u0440\u043E\u0439; -1 \u2013 \u0435\u0441\u043B\u0438 \u0432\u043E \u0432\u0442\u043E-\n\u0440\u043E\u0439 \u0431\u043E\u043B\u044C\u0448\u0435 \u0441\u0438\u043C\u0432\u043E\u043B\u043E\u0432, \u0447\u0435\u043C \u0432 \u043F\u0435\u0440\u0432\u043E\u0439; \u0438\u043B\u0438 0 \u2013 \u0435\u0441\u043B\u0438 \u0441\u0442\u0440\u043E\u043A\u0438\n\u043E\u0434\u0438\u043D\u0430\u043A\u043E\u0432\u043E\u0439 \u0434\u043B\u0438\u043D\u044B.</p>");
-function comparingTheLines(w, e) {
+/*
+document.write (`<p>Задание</p>`)
+document.write (`<p>1
+Написать функцию, которая принимает 2 строки и срав-
+нивает их длину. Функция возвращает 1, если в первой
+строке больше символов, чем во второй; -1 – если во вто-
+рой больше символов, чем в первой; или 0 – если строки
+одинаковой длины.</p>`)
+
+function comparingTheLines (w,e) {
     if (w.length > e.length) {
-        return "1- \u043F\u0435\u0440\u0432\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430 \u0434\u043B\u0438\u043D\u043D\u0435\u0435 \u0432\u0442\u043E\u0440\u043E\u0439";
-    }
-    else if (w.length < e.length) {
-        return "-1 - \u0432\u0442\u043E\u0440\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430 \u0434\u043B\u0438\u043D\u043D\u0435\u0435 \u043F\u0435\u0440\u0432\u043E\u0439";
-    }
-    else {
-        return "0 - \u0441\u0442\u0440\u043E\u043A\u0438 \u0440\u0430\u0432\u043D\u043E\u0439 \u0434\u043B\u0438\u043D\u044B";
+        return `1- первая строка длиннее второй`
+    }else if (w.length < e.length) {
+        return `-1 - вторая строка длиннее первой`
+    }else {
+        return `0 - строки равной длины`
     }
 }
-var the_string_compared_1 = "lorem ipsum dolor, sit amet consectetur adipisicing elit.";
-var the_string_compared_2 = "Praesentium quisquam, similique natus repellendus velit sed nostrum eaque iste libero fugit\nlaboriosam temporibus itaque accusantium nisi doloribus dicta soluta sunt iure.";
-document.write(comparingTheLines(the_string_compared_1, the_string_compared_2).toString());
-document.write("<hr>");
-document.write("<p>2\n\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043F\u0435\u0440\u0435\u0432\u043E\u0434\u0438\u0442 \u0432 \u0432\u0435\u0440\u0445\u043D\u0438\u0439 \u0440\u0435\u0433\u0438\u0441\u0442\u0440\n\u043F\u0435\u0440\u0432\u044B\u0439 \u0441\u0438\u043C\u0432\u043E\u043B \u043F\u0435\u0440\u0435\u0434\u0430\u043D\u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0438.</p>");
-document.write("<p>\u041F\u0435\u0440\u0435\u0434\u0430\u043D\u043D\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430 : " + the_string_compared_1 + "</p>");
-function changingTheCase(w) {
-    document.write("<p>\u041F\u043E\u043C\u0435\u043D\u044F\u043D \u0440\u0435\u0433\u0438\u0441\u0442\u0440 \u043F\u0435\u0440\u0432\u043E\u0439 \u0431\u0443\u043A\u0432\u044B: " + (w[0].toUpperCase() + w.slice(1)) + "</p>");
+
+let the_string_compared_1 = `lorem ipsum dolor, sit amet consectetur adipisicing elit.`
+let the_string_compared_2 = `Praesentium quisquam, similique natus repellendus velit sed nostrum eaque iste libero fugit
+laboriosam temporibus itaque accusantium nisi doloribus dicta soluta sunt iure.`
+document.write(comparingTheLines (the_string_compared_1,the_string_compared_2).toString())
+
+document.write (`<hr>`)
+
+document.write (`<p>2
+Написать функцию, которая переводит в верхний регистр
+первый символ переданной строки.</p>`)
+document.write (`<p>Переданная строка : ${the_string_compared_1}</p>`)
+function changingTheCase (w) {
+    document.write (`<p>Поменян регистр первой буквы: ${w[0].toUpperCase()+ w.slice(1)}</p>`)
 }
-changingTheCase(the_string_compared_1);
+changingTheCase (the_string_compared_1)
+
 // switch(a) {
 //     case 'o':
 //     case 'a':
 //         count++
 // }
-document.write("<hr>");
-document.write("<p>3\n\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0441\u0447\u0438\u0442\u0430\u0435\u0442 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0433\u043B\u0430\u0441\u043D\u044B\u0445\n\u0431\u0443\u043A\u0432 \u0432 \u043F\u0435\u0440\u0435\u0434\u0430\u043D\u043D\u043E\u0439 \u0441\u0442\u0440\u043E\u043A\u0435.</p>");
-document.write("<p>\u041F\u0435\u0440\u0435\u0434\u0430\u043D\u043D\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430:" + the_string_compared_2);
-function countingVowels(w) {
-    var a = 0;
-    for (var i = 0; i < w.length; i++) {
+document.write (`<hr>`)
+document.write (`<p>3
+Написать функцию, которая считает количество гласных
+букв в переданной строке.</p>`)
+
+document.write (`<p>Переданная строка:${the_string_compared_2}`)
+function countingVowels (w) {
+    let a = 0
+    for (let i = 0; i < w.length; i ++){
         switch (w[i]) {
             case 'a':
             case 'e':
             case 'i':
             case 'o':
             case 'u':
-                a += 1;
+            a += 1
         }
     }
-    document.write("<p>\u0412 \u0441\u0442\u0440\u043E\u043A\u0435 " + a + " \u0433\u043B\u0430\u0441\u043D\u044B\u0445</p>");
+    document.write (`<p>В строке ${a} гласных</p>`)
 }
-countingVowels(the_string_compared_2);
-document.write("<hr>");
-document.write("<p>4\n\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E \u0434\u043B\u044F \u043F\u0440\u043E\u0432\u0435\u0440\u043A\u0438 \u0441\u043F\u0430\u043C\u0430 \u0432 \u043F\u0435\u0440\u0435\u0434\u0430\u043D\u043D\u043E\u0439\n\u0441\u0442\u0440\u043E\u043A\u0435. \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 true, \u0435\u0441\u043B\u0438 \u0441\u0442\u0440\u043E\u043A\u0430 \u0441\u043E\u0434\u0435\u0440\u0436\u0438\u0442\n\u0441\u043F\u0430\u043C. \u0421\u043F\u0430\u043C\u043E\u043C \u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0435 \u0441\u043B\u043E\u0432\u0430: 100% \u0431\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E,\n\u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u043F\u0440\u043E\u0434\u0430\u0436, \u0442\u043E\u043B\u044C\u043A\u043E \u0441\u0435\u0433\u043E\u0434\u043D\u044F, \u043D\u0435 \u0443\u0434\u0430\u043B\u044F\u0439\u0442\u0435, \u0445\u0445\u0445.\n\u0424\u0443\u043D\u043A\u0446\u0438\u044F \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043D\u0435\u0447\u0443\u0432\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u0430 \u043A \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0443.</p>");
-var the_string_compared_rus1 = "\u0412 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0432\u0440\u0435\u043C\u044F \u0432 \u0441\u0432\u044F\u0437\u0438 \u0441 \u043A\u0440\u0438\u0437\u0438\u0441\u043E\u043C \u043C\u043D\u0435, \u043A\u0430\u043A \u0431\u0438\u0437\u043D\u0435\u0441-\u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u043D\u0442\u0443,\n \u043E\u0447\u0435\u043D\u044C \u043C\u043D\u043E\u0433\u0438\u0435 \u043A\u043B\u0438\u0435\u043D\u0442\u044B \u0437\u0430\u0434\u0430\u044E\u0442 \u0432\u043E\u043F\u0440\u043E\u0441\u044B, \u0441\u0432\u044F\u0437\u0430\u043D\u043D\u044B\u0435 \u0441 \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u043F\u0440\u043E\u0434\u0430\u0436 \u0442\u043E\u043B\u044C\u043A\u043E \u0441\u0435\u0433\u043E\u0434\u043D\u044F.";
-var the_string_compared_rus2 = "\"\u0423 \u0431\u0438\u0437\u043D\u0435\u0441\u043C\u0435\u043D\u043E\u0432 \u043F\u043E\u0447\u0442\u0438 \u043D\u0435 \u0432\u043E\u0437\u043D\u0438\u043A\u0430\u0435\u0442 \u0432\u043E\u043F\u0440\u043E\u0441\u043E\u0432, \u0441\u0432\u044F\u0437\u0430\u043D\u043D\u044B\u0445 \u0441 \u043F\u043E\u0438\u0441\u043A\u043E\u043C \u0438 \u0437\u0430\u043A\u0443\u043F\u043A\u043E\u0439\n \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u043E\u0432 \u0438\u043B\u0438 \u0433\u043E\u0442\u043E\u0432\u044B\u0445 \u0442\u043E\u0432\u0430\u0440\u043E\u0432.\"";
-function checkSpam(str) {
-    var lowerStr = str.toLowerCase();
+countingVowels (the_string_compared_2)
+
+document.write (`<hr>`)
+
+
+document.write (`<p>4
+Написать функцию для проверки спама в переданной
+строке. Функция возвращает true, если строка содержит
+спам. Спамом считать следующие слова: 100% бесплатно,
+увеличение продаж, только сегодня, не удаляйте, ххх.
+Функция должна быть нечувствительна к регистру.</p>`)
+
+let the_string_compared_rus1 = `В последнее время в связи с кризисом мне, как бизнес-консультанту,
+ очень многие клиенты задают вопросы, связанные с увеличение продаж только сегодня.`
+let the_string_compared_rus2 = `"У бизнесменов почти не возникает вопросов, связанных с поиском и закупкой
+ материалов или готовых товаров."`
+
+ function checkSpam(str) {
+    let lowerStr = str.toLowerCase()
     return (lowerStr.includes('увеличение продаж') ||
-        lowerStr.includes('только сегодня') ||
-        lowerStr.includes('100% бесплатно') ||
-        lowerStr.includes('не удаляйте') ||
-        lowerStr.includes('xxx')) && 'спам' || 'не спам';
+            lowerStr.includes('только сегодня') ||
+            lowerStr.includes('100% бесплатно') ||
+            lowerStr.includes('не удаляйте') ||
+            lowerStr.includes('xxx')) && 'спам' || 'не спам'
     // ne srabotaet t.k. nado proverit na vhozdenie, a ne ravenstvo
     // switch (lowerStr) {
     //     case('увеличение продаж'):
@@ -66,83 +93,113 @@ function checkSpam(str) {
     //     return 'не спам'
     // }
 }
-document.write("<p> \u0421\u0442\u0440\u043E\u043A\u0430: " + the_string_compared_rus1 + " - " + checkSpam(the_string_compared_rus1) + "</p> ");
-document.write("<p> \u0421\u0442\u0440\u043E\u043A\u0430: " + the_string_compared_rus2 + " - " + checkSpam(the_string_compared_rus2) + "</p> ");
+   document.write (`<p> Строка: ${the_string_compared_rus1} - ${checkSpam(the_string_compared_rus1)}</p> `)
+   document.write (`<p> Строка: ${the_string_compared_rus2} - ${checkSpam(the_string_compared_rus2)}</p> `)
 //   console.log (checkSpam(the_string_compared_rus2))
-document.write("<hr>");
-document.write("<p>5\n\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E \u0441\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u043E\u043A\u0438. \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438-\n\u043C\u0430\u0435\u0442 \u0441\u0442\u0440\u043E\u043A\u0443 \u0438 \u0435\u0435 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0443\u044E \u0434\u043B\u0438\u043D\u0443. \u0415\u0441\u043B\u0438 \u0434\u043B\u0438\u043D\u0430 \u0441\u0442\u0440\u043E\u043A\u0438\n\u0431\u043E\u043B\u044C\u0448\u0435, \u0447\u0435\u043C \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0430\u044F, \u0442\u043E \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043E\u0442\u0431\u0440\u043E\u0441\u0438\u0442\u044C\n\u043B\u0438\u0448\u043D\u0438\u0435 \u0441\u0438\u043C\u0432\u043E\u043B\u044B, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0432\u043C\u0435\u0441\u0442\u043E \u043D\u0438\u0445 \u0442\u0440\u043E\u0435\u0442\u043E\u0447\u0438\u0435.\n\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440: truncate(\u201CHello, world!\u201D, 8) \u0434\u043E\u043B\u0436\u043D\u0430 \u0432\u0435\u0440\u043D\u0443\u0442\u044C\n\u201CHello...\u201D.</p>");
-function trimTheLine(my_line, max_line) {
-    if (my_line.length > max_line) {
-        return my_line.slice(0, max_line) + '...' + my_line.slice(my_line.length - 2, my_line.length);
-    }
-    else {
-        return my_line;
-    }
-}
-document.write("<p>\u0421\u0442\u0440\u043E\u043A\u0443:'" + the_string_compared_rus2 + "' \u0443\u043A\u043E\u0440\u0430\u0447\u0438\u0432\u0430\u0435\u043C \u0434\u043E 25 \u043F\u043E\u0437\u0438\u0446\u0438\u0439</p>");
-document.write("<p> " + trimTheLine(the_string_compared_rus2, 25) + "</p>");
-document.write("<hr>");
-document.write("<p>6\n\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u0442, \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043B\u0438 \u043F\u0435\u0440\u0435-\n\u0434\u0430\u043D\u043D\u0430\u044F \u0441\u0442\u0440\u043E\u043A\u0430 \u043F\u0430\u043B\u0438\u043D\u0434\u0440\u043E\u043C.</p>");
-function checkingThePalindrome(my_line) {
-    var a = (my_line.length) / 2;
-    for (var i = 0; i < parseInt(a); i++) {
-        if (my_line[i] == my_line.slice(-1 - i)[0]) {
-            return 'Палиндром';
-        }
-        else {
-            return 'НЕ палиндром';
-        }
+document.write (`<hr>`)
+document.write (`<p>5
+Написать функцию сокращения строки. Функция прини-
+мает строку и ее максимальную длину. Если длина строки
+больше, чем максимальная, то необходимо отбросить
+лишние символы, добавив вместо них троеточие.
+Например: truncate(“Hello, world!”, 8) должна вернуть
+“Hello...”.</p>`)
+
+
+function trimTheLine (my_line, max_line){
+    if (my_line.length > max_line){
+        return my_line.slice(0,max_line) + '...' + my_line.slice(my_line.length - 2, my_line.length )
+    }else {
+        return my_line
     }
 }
-document.write("<p>\u0412\u044B\u0440\u043E\u0436\u0435\u043D\u0438\u0435 \"\u0430 \u0440\u043E\u0437\u0430 \u0443\u043F\u0430\u043B\u0430 \u043D\u0430 \u043B\u0430\u043F\u0443 \u0430\u0437\u043E\u0440\u0430\" - " + checkingThePalindrome('а роза упала на лапу азора') + "</p>");
-document.write("<p>\u0412\u044B\u0440\u043E\u0436\u0435\u043D\u0438\u0435 \"\u044F \u0438\u0434\u0443 \u0432 \u0448\u043A\u043E\u043B\u0443\" - " + checkingThePalindrome('я иду в школу') + "</p>");
-document.write("<hr>");
-document.write("<p>7\n\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0441\u0447\u0438\u0442\u0430\u0435\u0442 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u043B\u043E\u0432 \u0432\n\u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0438.</p>");
-function countingWords(my_line) {
-    var w = 0;
-    for (var i = 0; i < my_line.length; i++) {
+document.write (`<p>Строку:'${the_string_compared_rus2}' укорачиваем до 25 позиций</p>`)
+document.write (`<p> ${trimTheLine (the_string_compared_rus2, 25,)}</p>`)
+document.write (`<hr>`)
+
+document.write (`<p>6
+Написать функцию, которая проверяет, является ли пере-
+данная строка палиндром.</p>`)
+
+
+function checkingThePalindrome (my_line) {
+    let a: any =( my_line.length) / 2
+    for (let i = 0; i < parseInt(a); i ++) {
+        if ( my_line[i] == my_line.slice(-1-i)[0]){
+            return 'Палиндром'
+        } else {
+            return 'НЕ палиндром'
+        }
+    }
+}
+document.write (`<p>Вырожение "а роза упала на лапу азора" - ${checkingThePalindrome ('а роза упала на лапу азора')}</p>`)
+document.write (`<p>Вырожение "я иду в школу" - ${checkingThePalindrome ('я иду в школу')}</p>`)
+document.write (`<hr>`)
+
+document.write (`<p>7
+Написать функцию, которая считает количество слов в
+предложении.</p>`)
+
+function countingWords (my_line) {
+    let w = 0
+    for (let i = 0; i < my_line.length; i ++){
         if (my_line.at(i) === ' ') {
-            w++;
+            w ++
         }
     }
-    return w + 1;
+    return w + 1
 }
-document.write("<p>\u0412 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0438: " + the_string_compared_rus2 + "</p><p>\u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u043B\u043E\u0432: " + countingWords(the_string_compared_rus2));
-document.write("<hr>");
-document.write("<p>8\n\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0441\u0430\u043C\u043E\u0435 \u0434\u043B\u0438\u043D\u043D\u043E\u0435\n\u0441\u043B\u043E\u0432\u043E \u0438\u0437 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F.</p>");
-function lookingForALongWord(my_line) {
-    var my_line1;
-    my_line1 = my_line.replace(/[,.]/g, '');
-    my_line1 = my_line.replaceAll(',', '').replaceAll('.', '');
-    var w_line = my_line1.split(' ');
-    var w = w_line[0].length;
-    for (var i = 0; i < w_line.length; i++) {
-        if (w < w_line[i].length) {
-            w = w_line[i];
+document.write (`<p>В предложении: ${the_string_compared_rus2}</p><p>Колличество слов: ${countingWords (the_string_compared_rus2)}`)
+document.write (`<hr>`)
+
+document.write (`<p>8
+Написать функцию, которая возвращает самое длинное
+слово из предложения.</p>`)
+
+function lookingForALongWord (my_line){
+    let my_line1
+    my_line1 = my_line.replace(/[,.]/g, '')
+    my_line1 = my_line.replaceAll(',', '').replaceAll('.', '')
+    let w_line = my_line1.split (' ')
+    let w = w_line[0].length
+    for (let i = 0; i < w_line.length; i ++){
+        if ( w < w_line[i].length) {
+            w = w_line[i]
         }
     }
-    return (w);
+    return (w)
 }
-document.write("<p>\u041F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0435: '" + the_string_compared_1 + "'</p>");
-document.write("<p> \u0421\u0430\u043C\u043E\u0435 \u0434\u043B\u0438\u043D\u043D\u043E\u0435 \u0441\u043B\u043E\u0432\u043E \u0438\u0437 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u044F:\"" + lookingForALongWord(the_string_compared_1) + "\"</p>");
-document.write("\u041C\u043E\u0436\u043D\u043E \u0431\u044B\u043B\u043E \u0432 \u043C\u0430\u0441\u0441\u0438\u0432 \u0437\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0432\u0441\u0435 \u0441\u043B\u043E\u0432\u0430 \u043D\u0430\u0438\u0431\u043E\u043B\u044C\u0448\u0435\u0439 \u043E\u0434\u0438\u043D\u0430\u043A\u043E\u0432\u043E\u0439 \u0434\u043B\u0438\u043D\u044B \u0438 \u0432\u044B\u0432\u0435\u0441\u0442\u0438 \u0438\u0445.");
-document.write("<hr>");
-document.write("<p>9\n    \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0441\u0447\u0438\u0442\u0430\u0435\u0442 \u0441\u0440\u0435\u0434\u043D\u044E\u044E \u0434\u043B\u0438\u043D\u0443 \u0441\u043B\u043E\u0432\u0430\n    \u0432 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0438..</p>");
-function calculateTheAverageLengthOfWords(my_line) {
-    var my_line1;
-    my_line1 = my_line.replace(/[,.]/g, '');
-    var w_line = my_line1.split(' ');
-    var w = 0;
-    var sum = 0;
-    for (var i = 0; i < w_line.length; i++) {
-        sum += w_line[i].length;
-        w += 1;
+document.write(`<p>Предложение: '${the_string_compared_1}'</p>`)
+document.write (`<p> Самое длинное слово из предложения:"${lookingForALongWord (the_string_compared_1)}"</p>`)
+
+document.write (`Можно было в массив записать все слова наибольшей одинаковой длины и вывести их.`)
+    document.write (`<hr>`)
+
+    document.write (`<p>9
+    Написать функцию, которая считает среднюю длину слова
+    в предложении..</p>`)
+
+    function calculateTheAverageLengthOfWords (my_line) {
+    let my_line1
+    my_line1 = my_line.replace(/[,.]/g, '')
+    let w_line = my_line1.split (' ')
+    let w = 0
+    let sum = 0
+    for (let i = 0; i < w_line.length; i ++){
+        sum += w_line[i].length
+        w+=1
     }
-    return (Math.round((sum / w) * 10)) / 10;
+    return (Math.round((sum / w)*10))/10
 }
-document.write("<p> \u0412 \u043F\u0440\u0435\u0434\u043B\u043E\u0436\u0435\u043D\u0438\u0438: " + the_string_compared_2 + "</p><p> \u0441\u0440\u0435\u0434\u043D\u044F\u044F \u0434\u043B\u0438\u043D\u0430 \u0441\u043B\u043E\u0432\u0430 \u0441\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442: " + calculateTheAverageLengthOfWords(the_string_compared_2));
-document.write("<hr>");
-document.write("<p>10 \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E, \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 \u0441\u0442\u0440\u043E\u043A\u0443 \u0438 \u0441\u0438\u043C\u0432\u043E\u043B\n\u0438 \u0432\u044B\u0432\u043E\u0434\u0438\u0442 \u0438\u043D\u0434\u0435\u043A\u0441\u044B, \u043F\u043E \u043A\u043E\u0442\u043E\u0440\u044B\u043C \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u044D\u0442\u043E\u0442 \u0441\u0438\u043C\u0432\u043E\u043B \u0432\n\u0441\u0442\u0440\u043E\u043A\u0435. \u0422\u0430\u043A\u0436\u0435 \u0432\u044B\u0432\u0435\u0441\u0442\u0438, \u0441\u043A\u043E\u043B\u044C\u043A\u043E \u0432\u0441\u0435\u0433\u043E \u0440\u0430\u0437 \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u0435\u0442\u0441\u044F \u044D\u0442\u043E\u0442\n\u0441\u0438\u043C\u0432\u043E\u043B \u0432 \u0441\u0442\u0440\u043E\u043A\u0435.</p>");
+document.write(`<p> В предложении: ${the_string_compared_2}</p><p> средняя длина слова составляет: ${calculateTheAverageLengthOfWords (the_string_compared_2)}`)
+
+document.write (`<hr>`)
+
+document.write (`<p>10 Написать функцию, которая принимает строку и символ
+и выводит индексы, по которым находится этот символ в
+строке. Также вывести, сколько всего раз встречается этот
+символ в строке.</p>`)
+*/
 /*
 function lookingForASymbol (my_line,q) {
     let str: any = []
@@ -253,26 +310,107 @@ for (var i = 0; i < 5; i++) {
 document.write("<p>\u0421\u043E\u0437\u0434\u0430\u0435\u043C \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B \u0432 \u0434\u0438\u0430\u043F\u0430\u0437\u043E\u043D\u0435 \u043E\u0442 " + min + " \u0434\u043E " + max + "</p>");
 outputToTheScreen(fiveNumbers);
 document.write("<hr>");
-// 1
-// Функция принимает 2 массива и возвращает новый мас-
-// сив, в котором собраны все элементы из двух массивов
-// без повторений.
-// Задание 2
-// Функция принимает 2 массива и возвращает новый массив,
-// в котором собраны общие элементы (то есть элементы,
-// которые встречаются и в первом и во втором массивах)
-// без повторений.
-// 3
-// Функция принимает 2 массива и возвращает новый мас-
-// сив, в котором собраны все элементы из первого массива,
-// которых нет во втором массиве.
-// Задание 3
-// Создать массив фруктов и отсортировать его по алфавиту.
-// Написать следующие функции.
-// 1
-// Вывод на экран с помощью document.write() в виде списка
-// (с помощью тегов ul и li).
-// 2
-// Поиск фрукта в массиве. Функция принимает название
-// фрукта и возвращает индекс найденного элемента или -1,
-// если не найден. Поиск должен быть нерегистрозависимым.
+document.write("<p>1 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 2 \u043C\u0430\u0441\u0441\u0438\u0432\u0430 \u0438 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u043D\u043E\u0432\u044B\u0439 \u043C\u0430\u0441\u0441\u0438\u0432, \u0432 \u043A\u043E\u0442\u043E\u0440\u043E\u043C \u0441\u043E\u0431\u0440\u0430\u043D\u044B \u0432\u0441\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0438\u0437 \u0434\u0432\u0443\u0445 \u043C\u0430\u0441\u0441\u0438\u0432\u043E\u0432 \u0431\u0435\u0437 \u043F\u043E\u0432\u0442\u043E\u0440\u0435\u043D\u0438\u0439.</p>");
+document.write("<p>\u041C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 10 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432: " + tenNumbers + "</p>");
+document.write("<p>\u041C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 5 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432: " + fiveNumbers + "</p>");
+function CombiningArrays(arr10, arr5) {
+    var arr = [];
+    for (var _i = 0, arr10_1 = arr10; _i < arr10_1.length; _i++) {
+        var el = arr10_1[_i];
+        if (!arr.includes(el))
+            arr.push(el);
+    }
+    for (var _a = 0, arr5_1 = arr5; _a < arr5_1.length; _a++) {
+        var el = arr5_1[_a];
+        if (!arr.includes(el))
+            arr.push(el);
+    }
+    return arr;
+}
+document.write("<p>\u041D\u043E\u0432\u044B\u0439 \u043C\u0430\u0441\u0441\u0438\u0432 \u0431\u0435\u0437 \u043F\u043E\u0432\u0442\u043E\u0440\u0430 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432: " + CombiningArrays(tenNumbers, fiveNumbers) + "</p>");
+//========================================================================================
+// Удалил все числа из массива 10, которые есть в 5
+/*
+function CombiningArrays (arr10: any [],arr5: any [],) {
+    let arr: any =[]
+    for (let i = 0; i < arr10.length; i++) {
+      if (!arr5.includes(arr10[i])) {
+        arr.push(arr10[i]);
+      }
+    }
+    console.log (arr)
+  }
+  CombiningArrays (tenNumbers,fiveNumbers,)
+*/
+//===========================================================================================
+document.write("<hr>");
+document.write("<p>2 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 2 \u043C\u0430\u0441\u0441\u0438\u0432\u0430 \u0438 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u043D\u043E\u0432\u044B\u0439 \u043C\u0430\u0441\u0441\u0438\u0432,\n\u0432 \u043A\u043E\u0442\u043E\u0440\u043E\u043C \u0441\u043E\u0431\u0440\u0430\u043D\u044B \u043E\u0431\u0449\u0438\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B (\u0442\u043E \u0435\u0441\u0442\u044C \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B,\n\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0432\u0441\u0442\u0440\u0435\u0447\u0430\u044E\u0442\u0441\u044F \u0438 \u0432 \u043F\u0435\u0440\u0432\u043E\u043C \u0438 \u0432\u043E \u0432\u0442\u043E\u0440\u043E\u043C \u043C\u0430\u0441\u0441\u0438\u0432\u0430\u0445)\n\u0431\u0435\u0437 \u043F\u043E\u0432\u0442\u043E\u0440\u0435\u043D\u0438\u0439.</p>");
+document.write("<p>\u041C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 10 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432: " + tenNumbers + "</p>");
+document.write("<p>\u041C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 5 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432: " + fiveNumbers + "</p>");
+function CombiningArrays_1(arr10, arr5) {
+    var arr = [];
+    for (var _i = 0, arr5_2 = arr5; _i < arr5_2.length; _i++) {
+        var el = arr5_2[_i];
+        if (arr10.includes(el))
+            arr.push(el);
+    }
+    // for (let i = 0; i < arr10.length; i++) {
+    //   if (arr5.includes(arr10[i])) {
+    //     arr.push(arr10[i]);
+    //   }
+    // }
+    if (arr.length == 0) {
+        return 'НЕТ одинаковых элементов';
+    }
+    else {
+        return (arr);
+    }
+}
+document.write("<p>\u041C\u0430\u0441\u0441\u0438\u0432 \u0441 \u043E\u0431\u0449\u0438\u043C\u0438 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430\u043C\u0438 \u0431\u0435\u0437 \u043F\u043E\u0432\u0442\u043E\u0440\u043E\u0432: " + CombiningArrays_1(tenNumbers, fiveNumbers) + "</p>");
+document.write("<hr>");
+document.write("<p>3 \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 2 \u043C\u0430\u0441\u0441\u0438\u0432\u0430 \u0438 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u043D\u043E\u0432\u044B\u0439 \u043C\u0430\u0441\n  \u0441\u0438\u0432, \u0432 \u043A\u043E\u0442\u043E\u0440\u043E\u043C \u0441\u043E\u0431\u0440\u0430\u043D\u044B \u0432\u0441\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0438\u0437 \u043F\u0435\u0440\u0432\u043E\u0433\u043E \u043C\u0430\u0441\u0441\u0438\u0432\u0430,\n  \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043D\u0435\u0442 \u0432\u043E \u0432\u0442\u043E\u0440\u043E\u043C \u043C\u0430\u0441\u0441\u0438\u0432\u0435.</p>");
+function CombiningArrays_2(arr10, arr5) {
+    var arr = [];
+    for (var i = 0; i < arr10.length; i++) {
+        if (!arr5.includes(arr10[i])) {
+            arr.push(arr10[i]);
+        }
+    }
+    return (arr);
+}
+document.write("<p>\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u043D\u044B\u0439 \u043C\u0430\u0441\u0441\u0438\u0432 \u0438\u0437 10 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432, \u0433\u0434\u0435 \u0443\u0434\u0430\u043B\u0435\u043D\u044B \u043E\u0431\u0449\u0438\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0441 \u043C\u0430\u0441\u0441\u0438\u0432\u043E\u043C \u0438\u0437 5 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u043E\u0432: " + CombiningArrays_2(tenNumbers, fiveNumbers) + "</p>");
+document.write("<hr>");
+document.write("<p>\u0417\u0430\u0434\u0430\u043D\u0438\u0435 3</p>");
+document.write("<p>\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u043C\u0430\u0441\u0441\u0438\u0432 \u0444\u0440\u0443\u043A\u0442\u043E\u0432 \u0438 \u043E\u0442\u0441\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0435\u0433\u043E \u043F\u043E \u0430\u043B\u0444\u0430\u0432\u0438\u0442\u0443.\n  \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0435 \u0444\u0443\u043D\u043A\u0446\u0438\u0438.</p>");
+var fruitList = ['lemon', 'watermelon', 'quince', 'mango', 'tangerine', 'melon',];
+document.write("<p>" + (fruitList.sort(function (a, b) { return a.localeCompare(b); }).join(', ')) + "</p>");
+document.write("<hr>");
+document.write("<p>1 \u0412\u044B\u0432\u043E\u0434 \u043D\u0430 \u044D\u043A\u0440\u0430\u043D \u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E document.write() \u0432 \u0432\u0438\u0434\u0435 \u0441\u043F\u0438\u0441\u043A\u0430\n  (\u0441 \u043F\u043E\u043C\u043E\u0449\u044C\u044E \u0442\u0435\u0433\u043E\u0432 ul \u0438 li).</p>");
+//const printUl = document.querySelector('.fruits')
+function printFruitList(arr) {
+    for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
+        var el = arr_1[_i];
+        // return printUl.innerHTML += `<li>${el}</li>`
+        document.write("<ul><li>" + el + "</li></ul>");
+    }
+}
+printFruitList(fruitList);
+document.write("<hr>");
+document.write("<p>2 \u041F\u043E\u0438\u0441\u043A \u0444\u0440\u0443\u043A\u0442\u0430 \u0432 \u043C\u0430\u0441\u0441\u0438\u0432\u0435. \u0424\u0443\u043D\u043A\u0446\u0438\u044F \u043F\u0440\u0438\u043D\u0438\u043C\u0430\u0435\u0442 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435\n  \u0444\u0440\u0443\u043A\u0442\u0430 \u0438 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442 \u0438\u043D\u0434\u0435\u043A\u0441 \u043D\u0430\u0439\u0434\u0435\u043D\u043D\u043E\u0433\u043E \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430 \u0438\u043B\u0438 -1,\n  \u0435\u0441\u043B\u0438 \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D. \u041F\u043E\u0438\u0441\u043A \u0434\u043E\u043B\u0436\u0435\u043D \u0431\u044B\u0442\u044C \u043D\u0435\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u043E\u0437\u0430\u0432\u0438\u0441\u0438\u043C\u044B\u043C.</p>");
+function lookingForFruit(f) {
+    return fruitList.indexOf(f);
+}
+document.write("<p>\u0418\u0449\u0438\u043C \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \"quince\" \u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u043C \u0438\u043D\u0434\u0435\u043A\u0441: " + lookingForFruit('quince') + "</p>");
+document.write("<p>\u0418\u0449\u0438\u043C \u044D\u043B\u0435\u043C\u0435\u043D\u0442 \"apple\" \u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u043C: " + lookingForFruit('apple') + "</p>");
+/*
+document.write (`<p></p>`)
+
+
+
+
+
+2
+Поиск фрукта в массиве. Функция принимает название
+фрукта и возвращает индекс найденного элемента или -1,
+если не найден. Поиск должен быть нерегистрозависимым.
+*/ 
